@@ -23,6 +23,9 @@ func TestStrStr(t *testing.T)  {
 }
 
 func TestFun(t *testing.T)  {
-	s := "11111"
-	fmt.Println(s[1]-'0')
+	s := []int{2,2,1}
+	ans := singleNumber(s)
+
+	fmt.Println(ans)
 }
+
