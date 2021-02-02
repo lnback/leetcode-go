@@ -23,9 +23,13 @@ func TestStrStr(t *testing.T)  {
 }
 
 func TestFun(t *testing.T)  {
-	s := []int{2,2,1}
-	ans := singleNumber(s)
 
-	fmt.Println(ans)
+	nums1 := []int{1,2,3}
+	nums2 := []int{2,3,4}
+	findMedianSortedArrays(nums1,nums2)
+
+
 }
+
+
 

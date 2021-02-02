@@ -1,26 +1,25 @@
 package H200
 
-func addTwoNumbers(l1 *ListNode,l2 *ListNode) *ListNode  {
-	ans := &ListNode{}
-	pre := ans
-	curA,curB := l1,l2
+func addTwoNumbers(l1 *ListNode,l2 *ListNode)*ListNode  {
+	head := new(ListNode)
+	cur := head
 	tmp := 0
-	for curA != nil && curB != nil{
-		val := curA.Val + curB.Val + tmp
-		if val >= 10{
-			tmp = 1
-			val = val - 10
+	for l1 != nil || l2 != nil || tmp > 0{
+		cur.Next = new(ListNode)
+		cur = cur.Next
+		if l1 != nil{
+			tmp += l1.Val
+			l1 = l1.Next
 		}
-		cur := &ListNode{
-			Val: val,
+		if l2 != nil{
+			tmp += l2.Val
+			l2 = l2.Next
 		}
-		pre.Next = cur
-		pre = ans.Next
+		cur.Val = tmp % 10
+		tmp /= 10
 	}
-	if curA != nil{
-		
-	}
-	
-	return ans.Next
+
+	return head.Next
 
 }
+
